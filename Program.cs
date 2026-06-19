@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using VetApi.Data;
 using VetApi.Interfaces.Repositories;
+using VetApi.Interfaces.Services;
 using VetApi.Repositories;
+using VetApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IDonoRepository, DonoRepository>();
+builder.Services.AddScoped<IDonoInterface, DonoService>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {

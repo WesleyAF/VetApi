@@ -2,8 +2,8 @@
 {
     public class ApiResponse<T>
     {
-        public T? Dados;
-        public string? Mensagem;
-        public bool Status = true;
+        public T? Dados { get; set; }
+        public string? Mensagem { get; set; }
+        public bool Status { get; set; } = true;
     }
 }
