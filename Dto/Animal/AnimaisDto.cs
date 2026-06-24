@@ -1,12 +1,10 @@
-﻿using VetApi.Models;
-
-namespace VetApi.Dto.Animal
+﻿namespace VetApi.Dto.Animal
 {
-    public class UpdateAnimalDto
+    public class AnimaisDto
     {
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string Especie { get; set; }
         public int Idade { get; set; }
-        public int? Dono { get; set; }
     }
 }

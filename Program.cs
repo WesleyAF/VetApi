@@ -15,7 +15,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IDonoRepository, DonoRepository>();
+builder.Services.AddScoped<IAnimalRepository, AnimalRepository>();
+builder.Services.AddScoped<IConsultaRepository, ConsultaRepository>();
+builder.Services.AddScoped<IVeterinarioRepository, VeterinarioRepository>();
 builder.Services.AddScoped<IDonoInterface, DonoService>();
+builder.Services.AddScoped<IAnimalInterface, AnimalService>();
+builder.Services.AddScoped<IConsultaInterface, ConsultaService>();
+builder.Services.AddScoped<IVeterinarioInterface, VeterinarioService>();
+
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {

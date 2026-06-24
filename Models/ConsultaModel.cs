@@ -8,6 +8,7 @@ namespace VetApi.Models
         public int Id { get; set; }
         public DateTime Data { get; set; }
         public string Diagnostico { get; set; }
+        [JsonIgnore]
         public AnimalModel Animal { get; set; }
         public VeterinarioModel Veterinario { get; set; }
 

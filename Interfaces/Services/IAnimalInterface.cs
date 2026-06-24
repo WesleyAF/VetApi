@@ -6,11 +6,11 @@ namespace VetApi.Interfaces.Services
 {
     public interface IAnimalInterface
     {
-        Task<ApiResponse<List<AnimalModel>>> ListarAnimais();
-        Task<ApiResponse<AnimalModel>> BuscarAnimalPorId(int id);
-        Task<ApiResponse<List<AnimalModel>>> CriarAnimal(CreateAnimalDto createAnimalDto);
-        Task<ApiResponse<List<AnimalModel>>> AtualizarAnimal(int Id, UpdateAnimalDto updateAnimalDto);
-        Task<ApiResponse<List<AnimalModel>>> DeletarAnimal(int id);
-        Task<ApiResponse<List<ConsultaModel>>> ListarConsultasPorAnimal(int animalId);
+        Task<ApiResponse<List<AnimaisDto>>> ListarAnimais();
+        Task<ApiResponse<AnimaisDto>> BuscarAnimalPorId(int id);
+        Task<ApiResponse<AnimaisDto>> CriarAnimal(CreateAnimalDto createAnimalDto);
+        Task<ApiResponse<AnimaisDto>> AtualizarAnimal(int Id, UpdateAnimalDto updateAnimalDto);
+        Task<ApiResponse<AnimaisDto>> DeletarAnimal(int id);
+        Task<ApiResponse<AnimalModel>> ListarConsultasPorAnimal(int animalId);
     }
 }

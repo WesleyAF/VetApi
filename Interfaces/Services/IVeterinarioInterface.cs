@@ -8,10 +8,10 @@ namespace VetApi.Interfaces.Services
     {
         Task<ApiResponse<List<VeterinarioModel>>> ListarVeterinarios();
         Task<ApiResponse<VeterinarioModel>> BuscarVeterinarioPorId(int id);
-        Task<ApiResponse<List<VeterinarioModel>>> CriarVeterinario(CreateVeterinarioDto createVeterinarioDto);
-        Task<ApiResponse<List<VeterinarioModel>>> AtualizarVeterinario(int Id, UpdateVeterinarioDto updateVeterinarioDto);
-        Task<ApiResponse<List<VeterinarioModel>>> DeletarVeterinario(int id);
-        Task<ApiResponse<List<ConsultaModel>>> ListarConsultasPorVeterinario(int veterinarioId);
+        Task<ApiResponse<VeterinarioModel>> CriarVeterinario(CreateVeterinarioDto createVeterinarioDto);
+        Task<ApiResponse<VeterinarioModel>> AtualizarVeterinario(int Id, UpdateVeterinarioDto updateVeterinarioDto);
+        Task<ApiResponse<VeterinarioModel>> DeletarVeterinario(int id);
+        Task<ApiResponse<VeterinarioConsultasDto>> ListarConsultasPorVeterinario(int veterinarioId);
        
     }
 }

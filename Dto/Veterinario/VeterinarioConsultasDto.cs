@@ -1,15 +1,13 @@
 ﻿using System.Text.Json.Serialization;
+using VetApi.Models;
 
-namespace VetApi.Models
+namespace VetApi.Dto.Veterinario
 {
-    public class AnimalModel
+    public class VeterinarioConsultasDto
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public string Especie { get; set; }
-        public int Idade { get; set; }
-
-        public DonoModel Dono { get; set; }
+        public string Sobrenome { get; set; }
         public List<ConsultaModel> Consultas { get; set; }
     }
 }

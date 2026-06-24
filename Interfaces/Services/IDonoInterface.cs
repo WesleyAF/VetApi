@@ -11,7 +11,7 @@ namespace VetApi.Interfaces.Services
         Task<ApiResponse<List<DonoModel>>> CriarDono(CreateDonoDto createDonoDto);
         Task<ApiResponse<List<DonoModel>>> AtualizarDono(int Id, UpdateDonoDto updateDonoDto);
         Task<ApiResponse<List<DonoModel>>> DeletarDono(int id);
-        Task<ApiResponse<DonoModel>> ListarAnimaisPorDono(int donoId);
+        Task<ApiResponse<DonoAnimaisDto>> ListarAnimaisPorDono(int donoId);
 
     }
 }

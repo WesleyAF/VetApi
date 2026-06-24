@@ -1,4 +1,5 @@
-﻿using VetApi.Dto.Dono;
+﻿using VetApi.Dto.Animal;
+using VetApi.Dto.Dono;
 using VetApi.Interfaces.Repositories;
 using VetApi.Interfaces.Services;
 using VetApi.Models;
@@ -135,15 +136,35 @@ namespace VetApi.Services
             }
         }
 
-        public async Task<ApiResponse<DonoModel>> ListarAnimaisPorDono(int donoId)
+        public async Task<ApiResponse<DonoAnimaisDto>> ListarAnimaisPorDono(int donoId)
         {
-            ApiResponse<DonoModel> resposta = new ApiResponse<DonoModel>();
+            ApiResponse<DonoAnimaisDto> resposta = new ApiResponse<DonoAnimaisDto>();
             try
             {
                 var dono = await _repository.ListAnimalsByOwner(donoId);
+                if (dono == null)
+                {
+                    resposta.Status = false;
+                    resposta.Mensagem = "Dono não encontrado";
+                    return resposta;
+                }
 
-                resposta.Dados = dono;
-                resposta.Mensagem = "Donos listados com sucesso.";
+                DonoAnimaisDto Dono = new DonoAnimaisDto
+                {
+                    Id = dono.Id,
+                    Nome = dono.Nome,
+                    Telefone = dono.Telefone,
+                    Animais = dono.Animais.Select(a => new AnimaisDto
+                    {
+                        Id = a.Id,
+                        Nome = a.Nome,
+                        Especie = a.Especie,
+                        Idade = a.Idade
+                    }).ToList()
+                };
+
+                resposta.Dados = Dono;
+                resposta.Mensagem = "Animais desse dono listados com sucesso.";
                 return resposta;
 
 

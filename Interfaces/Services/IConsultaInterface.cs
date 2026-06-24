@@ -8,8 +8,8 @@ namespace VetApi.Interfaces.Services
     {
         Task<ApiResponse<List<ConsultaModel>>> ListarConsultas();
         Task<ApiResponse<ConsultaModel>> BuscarConsultaPorId(int id);
-        Task<ApiResponse<List<ConsultaModel>>> CriarConsulta(CreateConsultaDto createConsultaDto);
-        Task<ApiResponse<List<ConsultaModel>>> AtualizarConsulta(int Id, UpdateConsultaDto updateConsultaDto);
-        Task<ApiResponse<List<ConsultaModel>>> DeletarConsulta(int id);
+        Task<ApiResponse<ConsultaDto>> CriarConsulta(CreateConsultaDto createConsultaDto);
+        Task<ApiResponse<ConsultaDto>> AtualizarConsulta(int Id, UpdateConsultaDto updateConsultaDto);
+        Task<ApiResponse<ConsultaDto>> DeletarConsulta(int id);
     }
 }
